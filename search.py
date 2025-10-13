@@ -14,7 +14,7 @@ def image_to_base64(image_path: str) -> str:
     return encoded_string
 
 
-def search_face(image_path: str, api_url: str = "http://192.168.30.64:8082/search"):
+def search_face(image_path: str, api_url: str = "http://192.168.30.64:8083/search"):
     """Rasmni API ga yuboradi va javobni chiqaradi"""
     try:
         image_b64 = image_to_base64(image_path)
@@ -39,5 +39,5 @@ if __name__ == "__main__":
         sys.exit(1)
 
     image_path = sys.argv[1]
-    api_url = sys.argv[2] if len(sys.argv) > 2 else "http://192.168.30.64:8082/search"
+    api_url = sys.argv[2] if len(sys.argv) > 2 else "http://192.168.30.64:8083/search"
     search_face(image_path, api_url)
